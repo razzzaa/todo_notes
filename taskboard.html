@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Dancing+Script:wght@400;500;600;700&family=Lobster&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="boardstyle.css">
+</head>
+
+<body>
+    <div id="bgrImg">
+        <form id="npdform">
+            <h1 class="text-light">Write Down Your Tasks:</h1>
+            <div id="mainDiv" class="d-flex justify-content-center m-auto">
+                <img id="inpImg" class="img-fluid" src="assets/images/notepad-icon-17524.png">
+                <textarea class="scrollbar" id="txtinp" rows="5" cols="22" placeholder="write a task"></textarea>
+                <div id="dueDateDiv">
+                    <label for="date">Due Date:</label>
+                    <input id="date" type="date">
+                </div>
+                <div id="dueTimeDiv">
+                    <label for="time">Time:</label>
+                    <input id="time" type="time">
+                </div>
+                <button class="ntpdBtns" id="sendBtn" type="button">
+                    Add<i class="fa-solid fa-check"></i>
+                </button>
+                <button class="ntpdBtns" id="resetBtn" type="button">
+                    Reset<i class="fa-solid fa-eraser"></i></i>
+                </button>
+            </div>
+            <div id="alertMsgDiv" class="col-3 alert alert-warning m-auto " role="alert">
+                Missing fields : One or more of the required fields are <strong> empty!</strong>!
+            </div>
+        </form>
+        <section class="container-fluid">
+            <div id="cards" class="row d-flex justify-content-evenly">
+            </div>
+        </section>
+    </div>
+    <script src=" https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script>
+    <script src="boardfeatures.js"></script>
+</body>
+
+</html>

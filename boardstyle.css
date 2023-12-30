@@ -1,0 +1,282 @@
+/*.........................................................................................................................*/
+/*MAIN STYLE*/
+body {
+  font-family: "Dancing Script", cursive;
+}
+
+#bgrImg {
+  margin: 2em;
+  background-image: url("assets/images/pexels-fwstudio-168442.jpg");
+  background-size: 50% auto;
+  border: 1em solid #7f55398e;
+  border-radius: 15px;
+  min-height: 96vh;
+  background-clip: border-box;
+}
+
+h1 {
+  font-family: "Abril Fatface", cursive;
+  text-align: center;
+}
+
+#mainDiv {
+  height: 400px;
+  width: 400px;
+  position: relative;
+}
+
+/*.........................................................................................................................*/
+/*INPUTS + ANIIMATION*/
+#txtinp {
+  position: absolute;
+  top: 91px;
+  left: 104px;
+  border: transparent;
+  background-color: transparent;
+  font-size: 1.5em;
+  outline: none;
+  resize: none;
+  overflow: auto;
+  transition: all 1s ease-out;
+}
+
+#dueDateDiv {
+  position: absolute;
+  top: 286px;
+  left: 142px;
+  font-size: 1.2em;
+  transition: 0.5s;
+}
+
+#dueTimeDiv {
+  position: absolute;
+  top: 317px;
+  left: 187px;
+  font-size: 1.2em;
+  transition: 0.3s;
+}
+
+#time,
+#date {
+  border: transparent;
+  background-color: transparent;
+  max-width: 125px;
+  outline: none;
+}
+
+#dueDateDiv:hover,
+#dueTimeDiv:hover {
+  transform: translateY(-2px);
+}
+
+/*.........................................................................................................................*/
+/*BUTTONS + ANIMATION*/
+#sendBtn {
+  position: absolute;
+  top: 296px;
+  left: 39px;
+  background-color: transparent;
+  border: transparent;
+  font-size: 1.4em;
+  transition: 0.5s;
+}
+
+#resetBtn {
+  position: absolute;
+  top: 322px;
+  left: 48px;
+  background-color: transparent;
+  border: transparent;
+  font-size: 1.4em;
+  transition: 0.5s;
+}
+
+#sendBtn:hover,
+#resetBtn:hover {
+  color: #767676;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+/*.........................................................................................................................*/
+/*NOTES + ANIMATION*/
+.notesDiv {
+  transition: 0.4s;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 250px;
+  font-size: 20px;
+  word-break: break-word;
+}
+
+.notesDiv:hover {
+  transform: scale(1.05);
+  box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, 0.5);
+}
+
+/*.........................................................................................................................*/
+/*DELETE BUTTON + ANIMATION*/
+.myCustomBtn {
+  display: flex;
+  visibility: hidden;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  margin-left: 200px;
+  border: none;
+  padding: 0px;
+}
+
+.notesDiv:hover .myCustomBtn {
+  visibility: visible;
+}
+
+/*.........................................................................................................................*/
+/*FADE IN ANIMATION*/
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.notesDiv {
+  animation: fadeIn 0.3s 1;
+}
+
+.notesDiv.animated {
+  animation: fadeIn paused;
+}
+
+/*.........................................................................................................................*/
+/*NOTES MAIN TEXT AREA DIV (ONLY FOR TXT NOT DATE/TIME)*/
+.txtArea {
+  margin-top: 5px;
+  overflow: auto;
+}
+
+/*.........................................................................................................................*/
+/* TIME AND DATE AREA DIV(THE LOWER PART OF THE NOTE) */
+.timeNdate {
+  margin-top: auto;
+  overflow: none;
+}
+
+/*MY CUSTOM SCROLL BAR WORKING WITH EDGE/CHROME*/
+.scrollbar::-webkit-scrollbar {
+  width: 12px;
+  background-color: #f5f5f53b;
+  scrollbar-color: grey;
+  border-radius: 10px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background-color: #afb1b454;
+}
+
+/* SCROLL BAR FOR MOZILLA FIRE-FOX ONLY:*/
+@-moz-document url-prefix() {
+  .scrollbar {
+    width: 240px;
+    scrollbar-color: grey;
+    border-radius: 10px;
+  }
+
+  .scrollbarNote {
+    width: 230px;
+    scrollbar-color: grey;
+    border-radius: 10px;
+  }
+}
+
+/*.........................................................................................................................*/
+/* SMALLER SIZE SCREEN */
+@media (max-width: 470px) {
+  #bgrImg {
+    width: 150%;
+    max-width: fit-content;
+  }
+
+  body {
+    margin-left: -17px;
+  }
+}
+
+/*..........................................................................................................................*/
+/* ALERT MESSAGE */
+#alertMsgDiv {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  transition: transform 0.8s, top 0.8s;
+  font-family: "Abril Fatface", cursive;
+  font-size: 0.9em;
+}
+
+#alertMsgDiv.active {
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+  top: 22%;
+  left: 73%;
+}
+
+/*..........................................................................................................................*/
+/* ALERT MESSAGE DIFFERENT SCREEN SIZES */
+@media (max-width: 1460px) {
+  #alertMsgDiv.active {
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+    top: 23%;
+    left: 76%;
+  }
+}
+
+@media (max-width: 1250px) {
+  #alertMsgDiv.active {
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+    top: 24%;
+    left: 80%;
+  }
+}
+
+@media (max-width: 880px) {
+  #alertMsgDiv.active {
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+    top: 25%;
+    left: 83%;
+    width: 20vw;
+  }
+}
+
+@media (max-width: 665px) {
+  #alertMsgDiv.active {
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+    top: 25%;
+    left: 83%;
+    width: 20vw;
+    font-size: 0.7em;
+  }
+}
+
+@media (max-width: 470px) {
+  #alertMsgDiv.active {
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+    top: 65%;
+    left: 50%;
+    width: 30vw;
+  }
+}
+
+/*.........................................................................................................................*/
